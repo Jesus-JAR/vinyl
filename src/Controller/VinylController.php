@@ -21,11 +21,11 @@ class VinylController //extends AbstractController
     public function browse(string $slug = null): Response
     {
         if($slug){
-            $title = u(str_replace("-", " ", $slug))->title(true);
+            $title ="Titulo: ". u(str_replace("-", " ", $slug))->title(true);
         }
         else{
             $title = "No selecciono ningun tipo de música.";
         }
-        return new Response('Title: ' . $title);
+        return new Response($title);
     }
 }
