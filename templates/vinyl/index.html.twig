@@ -1,3 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title  %}Mixted Vinyl{% endblock  %}
+
+{% block  body %}
+
 <h1> {{ title }} </h1>
 
 {# Todo: add an image of the record (comment) #}
@@ -5,11 +11,16 @@
 <div>
      Tracks: 
      <ul>
-        
+
         {% for track in tracks %}
         <li>{{ track.Artist|capitalize }} - {{ track.Song }}</li>
         {% endfor %}
 
      </ul>
 </div>
+
+{% endblock  %}
+
+
+
 
