@@ -5,16 +5,29 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use function Symfony\Component\String\u;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-#use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-
-class VinylController //extends AbstractController
+class VinylController extends AbstractController
 {
     #[Route('/')]
     public function  index(): Response
     {
-        return new Response("Title: PB and Jams");
+        $tracks = [
+            ['Song' => 'Gangsta\'s Paradise', 'Artist' => 'Coolio'],
+            ['Song' => 'Waterfalls', 'Artist' => 'TLC'],
+            ['Song' => 'Creep' , 'Artist' => 'Radiohead'],
+            ['Song' => 'Kiss from a Rose', 'Artist' => 'Seal'],
+            ['Song' => 'On Bended Knee', 'Artist' => 'Boyz II Men'],
+            ['Song' => 'Fantasy', 'Artist' => 'Mariah Carey'],
+        ];
+
+        // metodo para llamar a una plantilla 
+        return $this->render('vinyl/index.html.twig', [
+
+            'title' => "PB & Jams", // parametro que se le pasa a la plantilla
+            'tracks' => $tracks,
+        ]);
     }
 
     #[Route('/browse/{slug}')]
