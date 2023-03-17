@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use function Symfony\Component\String\u;
@@ -25,6 +26,7 @@ class VinylController extends AbstractController
         // metodo para llamar a una plantilla 
         return $this->render('vinyl/index.html.twig', [
 
+            'parrafo' => "el titulo de los discos",
             'title' => "PB & Jams", // parametro que se le pasa a la plantilla
             'tracks' => $tracks,
         ]);
