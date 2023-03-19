@@ -23,12 +23,9 @@ class VinylController extends AbstractController
             ['Song' => 'Fantasy', 'Artist' => 'Mariah Carey'],
         ];
 
-
-
         // metodo para llamar a una plantilla 
         return $this->render('vinyl/index.html.twig', [
 
-            'parrafo' => "el titulo de los discos",
             'title' => "PB & Jams", // parametro que se le pasa a la plantilla
             'tracks' => $tracks,
         ]);

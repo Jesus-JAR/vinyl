@@ -4,19 +4,15 @@
 
 {% block  body %}
 
-<h1> {{ title }} </h1>
-
-
-{{ dump()}}
+<h1 class="text-light"> {{ title }} </h1>
 
 {# Todo: add an image of the record (comment) #}
-<h2> {{parrafo|title}} </h2>
-<div>
+<div class="text-light">
      Tracks: 
      <ul>
 
         {% for track in tracks %}
-        <li>{{ track.Artist|capitalize }} - {{ track.Song }}</li>
+        <li class="ms-2">{{ track.Artist|capitalize }} - {{ track.Song }}</li>
         {% endfor %}
 
      </ul>
